@@ -2,6 +2,8 @@ import { Stack } from "@chakra-ui/react";
 import React from "react";
 import HomeSlider from "../Courasel/Homeslider"
 import "../Home/Home.css"
+import Navbar from "../Navbar";
+import Footer from "../Footer/Footer";
 
 function Home() {
   return (
@@ -11,9 +13,12 @@ function Home() {
         flexDirection: "column",
         justifyContent: "center",
         marginBottom: "30px",
+        zoom:0.9
        
       }}
     >
+      {/* -----------------------NAVBAR--------------------- */}
+      <Navbar/>
       {/* -----------------------Caurousel--------------------- */}
       <div style={{ display: "flex", justifyContent: "center", width: "90%", marginLeft:  "60px"}}>
       
@@ -1284,6 +1289,9 @@ Outdoor Furniture<br/>
           </Stack>
         </Stack>
       </div>
+
+      {/* -----------------------FOOTER--------------------- */}
+      <Footer/>
     </div>
   );
 }
