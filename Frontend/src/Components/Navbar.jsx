@@ -1,17 +1,23 @@
 import { Box, Input, InputGroup, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react'
 import { Icon, createIcon } from '@chakra-ui/react'
 import React from 'react'
-import { FaBeer  } from 'react-icons/fa';
+import { HiOutlineHeart  } from 'react-icons/hi';
+import { RiUserLine  } from 'react-icons/ri';
+import { AiOutlineShoppingCart  } from 'react-icons/ai';
 import { Link } from 'react-router-dom'
 import styles from "./navbar.module.css"
 
 const Navbar = () => {
   return (
     <div>
-        <Box style={{border:"1px solid black"}}>
+        <Box 
+        // style={{border:"1px solid black"}}
+        >
 
             {/* ABOVE NAVBAR START */}
-            <Box style={{border:"1px solid green"}}>
+            <Box 
+            // style={{border:"1px solid green"}}
+            >
                 <div className={styles.aboveNavDiv} >
 
             <Stack direction={"row"} spacing="20px">
@@ -78,16 +84,8 @@ const Navbar = () => {
                 }}
               ></button>
               <Menu>
-                <MenuButton
-                  style={{
-                    verticalAlign: "middle",
-                    width: "40px",
-                    backgroundSize: "30px",
-                    fill: "orange",
-                    background:
-                      "url(https://ii1.pepperfry.com/images/svg/icon-profile-21.svg?v=1) no-repeat center",
-                  }}
-                >
+                <MenuButton>
+                    <Icon style={{fontSize:"25px"}}><RiUserLine /></Icon>
                     <span
                       style={{
                         position: "relative",
@@ -95,8 +93,8 @@ const Navbar = () => {
                         backgroundColor: "orange",
                         border: "4px solid orange",
                         borderRadius: "100%",
-                        top: "-17px",
-                        left: "5px",
+                        top: "-14px",
+                        left: "-8px",
                       }}
                     ></span>
                 </MenuButton>
@@ -114,25 +112,9 @@ const Navbar = () => {
                   </MenuList>
               </Menu>
                       
-            <Icon style={{fontSize:"25px"}}><FaBeer /></Icon>
-              <button
-                style={{
-                    verticalAlign: "middle",
-                  width: "30px",
-                  backgroundSize: "30px",
-                  background:
-                    "url(https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg) no-repeat center",
-                }}
-              ></button>
-              <button
-                style={{
-                    verticalAlign: "middle",
-                  width: "30px",
-                  backgroundSize: "30px",
-                  background:
-                    "url(https://ii1.pepperfry.com/images/svg/icon-cart-21.svg) no-repeat center",
-                }}
-              ></button>
+            <Link to="/wishlist"><Icon style={{fontSize:"25px"}}><HiOutlineHeart /></Icon></Link> 
+            <Link to={"/cart"}><Icon style={{fontSize:"25px"}}><AiOutlineShoppingCart /></Icon></Link> 
+    
             </Stack>
           </div>
         </Box>
