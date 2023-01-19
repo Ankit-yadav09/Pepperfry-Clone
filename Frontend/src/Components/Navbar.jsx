@@ -112,8 +112,8 @@ const Navbar = () => {
                   </MenuList>
               </Menu>
                       
-            <Icon style={{fontSize:"25px"}}><HiOutlineHeart /></Icon>
-            <Icon style={{fontSize:"25px"}}><AiOutlineShoppingCart /></Icon>
+            <Link to="/wishlist"><Icon style={{fontSize:"25px"}}><HiOutlineHeart /></Icon></Link> 
+            <Link to={"/cart"}><Icon style={{fontSize:"25px"}}><AiOutlineShoppingCart /></Icon></Link> 
     
             </Stack>
           </div>
