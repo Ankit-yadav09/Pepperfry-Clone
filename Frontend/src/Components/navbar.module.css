@@ -25,13 +25,13 @@
     padding-right: 20px;
 }
 .NavOuterDiv{
-    border: 1px solid green;
-    padding-top: 5px;
+    /* border: 1px solid green; */
+    padding-top: 10px;
     padding-bottom: 5px;
     width: 100%;
 }
 .NavLogoSearchDiv{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 88%;
     margin: auto;
     display: flex;
