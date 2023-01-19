@@ -18,3 +18,23 @@
     color: #fe8970;
     text-decoration: underline;
 }
+.brandLogo{
+    height: 50px;
+    width: 130px;
+    background-color: white;
+    padding-right: 20px;
+}
+.NavOuterDiv{
+    border: 1px solid green;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.NavLogoSearchDiv{
+    border: 1px solid blue;
+    width: 88%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
