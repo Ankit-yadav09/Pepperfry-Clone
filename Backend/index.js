@@ -2,14 +2,15 @@ const express = require("express");
 const { connect } = require("./configs/db");
 require("dotenv").config();
 
-const cors = require('cors')
-
+const cors = require("cors");
+const { homeDecorRoutes } = require("./routes/homeDocor.routes");
 
 const app = express();
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 
-
+//routes
+app.use("/homeDecor", homeDecorRoutes);
 
 app.listen(process.env.port, async () => {
   try {
