@@ -55,7 +55,11 @@ userRouter.post("/login", async (req, res) => {
         } else {
           if (result) {
             jwt.sign(
-              { userId: user._id, userName: user.name },
+              {
+                userId: user._id,
+                userName: user.name,
+                userType: user.userType,
+              },
               process.env.secretKey,
               (err, token) => {
                 if (err) {
