@@ -5,6 +5,7 @@ const cors = require("cors");
 const { homeDecorRoutes } = require("./routes/homeDocor.routes");
 const { furnitureRouter}=require("./routes/furnitureRoute");
 const { lightRoutes } = require("./routes/light.routes");
+const {KitchenRouter}=require("./routes/KitchenRouter")
 
 
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/homeDecor", homeDecorRoutes);
 app.use("/fur",furnitureRouter)
 app.use("/light",lightRoutes)
+app.use("/kitchen", KitchenRouter)
 
 
 app.listen(process.env.port, async () => {
