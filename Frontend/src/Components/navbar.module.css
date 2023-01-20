@@ -6,10 +6,13 @@
     padding: 10px 100px;
     background-color: #f5f5f5;
 }
-
 .aboveNavLeft{
     color: rgb(60, 59, 59);
     font-size: 16px;
+}
+.aboveNavLeft:hover{
+    cursor: pointer;
+    color: #fe8970;
 }
 .aboveNavRight{
     font-size: 14px;
@@ -37,4 +40,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.SubCatFurniture p:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 425px) {
+    /*Small smartphones [325px -> 425px]*/
+    .aboveNavDiv{
+        display: none;
+    }
 }
