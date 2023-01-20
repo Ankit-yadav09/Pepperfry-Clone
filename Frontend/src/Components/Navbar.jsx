@@ -19,6 +19,7 @@ const Navbar = () => {
             {/* ABOVE NAVBAR START */}
             <Box 
             // style={{border:"1px solid green"}}
+            
             >
                 <div className={styles.aboveNavDiv} >
 
