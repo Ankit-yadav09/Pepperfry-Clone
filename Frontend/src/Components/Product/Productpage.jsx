@@ -89,10 +89,12 @@ const handlePriceFiltering=(e)=>{
   },[sort,priceFilters])
 
   useEffect(()=>{
-    fetch(`https://peppperfry.herokuapp.com/products/${type}`)
+    fetch(`https://naughty-pear-bream.cyclic.app/homeDecor/product`)
     .then(res=>res.json())
     .then(data=>{setPageData(data)
-    setProductsData(data)})
+      // console.log(data)
+      setProductsData(data)
+  })
     .catch(err=>console.log(err))
   },[])
 

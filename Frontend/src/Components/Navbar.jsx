@@ -6,12 +6,14 @@ import { RiUserLine  } from 'react-icons/ri';
 import { AiOutlineShoppingCart  } from 'react-icons/ai';
 import { Link } from 'react-router-dom'
 import styles from "./navbar.module.css"
+import Categories from './Categories';
 
 const Navbar = () => {
   return (
     <div>
         <Box 
-        // style={{border:"1px solid black"}}
+        //  style={{position:"fixed"}}
+        // style={{border:"1px solid black",}}
         >
 
             {/* ABOVE NAVBAR START */}
@@ -118,8 +120,9 @@ const Navbar = () => {
             </Stack>
           </div>
         </Box>
-
+    <Categories/>
         </Box>
+        
     </div>
   )
 }
