@@ -6,8 +6,8 @@ import { ProductsPage } from './Components/Product/Productpage';
 function App() {
   return (
     <div className="App">
-      {/* <MainRoutes /> */}
-      <ProductsPage/>
+      <MainRoutes />
+
     </div>
   );
 }
