@@ -5,7 +5,8 @@ const cors = require("cors");
 const { homeDecorRoutes } = require("./routes/homeDocor.routes");
 const { furnitureRouter}=require("./routes/furnitureRoute");
 const { lightRoutes } = require("./routes/light.routes");
-const {KitchenRouter}=require("./routes/KitchenRouter")
+const {KitchenRouter}=require("./routes/KitchenRouter");
+const { userRouter } = require("./routes/users.routes");
 
 
 
@@ -19,6 +20,10 @@ app.use("/homeDecor", homeDecorRoutes);
 app.use("/fur",furnitureRouter)
 app.use("/light",lightRoutes)
 app.use("/kitchen", KitchenRouter)
+
+
+//auth routes
+app.use("/user",userRouter)
 
 
 app.listen(process.env.port, async () => {
