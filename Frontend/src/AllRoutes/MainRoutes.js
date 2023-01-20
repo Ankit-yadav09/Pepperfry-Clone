@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router'
 import Home from '../Components/Home/Home'
 import Login from "../Components/Login/Login"
+import { ProductsPage } from '../Components/Product/Productpage'
 import Signup from "../Components/Signup/Signup"
 
 const MainRoutes = () => {
@@ -13,7 +14,7 @@ const MainRoutes = () => {
       <Route path="/signup" element={<Signup/>} />
       {/* <Route path="/wishlist" element={<Wishlist/>} /> */}
       {/* <Route path="/help" element={<Help/>} /> */}
-      {/* <Route path="/furniture" element={<Furniture/>} /> */}
+      <Route path="/furniture" element={<ProductsPage/>} />
       {/* <Route path="/mattresses" element={<Mattresses/>} /> */}
       {/* <Route path="/kitchen" element={<Kitchen/>} /> */}
       {/* <Route path="/homedecor" element={<Homedecor/>} /> */}

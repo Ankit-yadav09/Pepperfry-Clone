@@ -1,17 +1,17 @@
 import React from 'react'
 import { Button, useDisclosure } from '@chakra-ui/react';
 import { useColorModeValue } from '@chakra-ui/react';
-import { useDispatch } from 'react-redux';
-// import { addItem } from './cartSlice';
+
+import { addItem } from './cartSlice';
 import CartSideBar from './CartSideBar';
 const AddToCartBT = (props) => {
-  const dispatch = useDispatch()
+  
   const { isOpen: cartSideBarIsOpen, onOpen: cartSideBarOnOpen, onClose: cartSideBarOnClose } = useDisclosure()
   return (
     <>
     <Button 
       onClick={() => {
-        dispatch(addItem(props.product));
+      
         cartSideBarOnOpen();
       }}
       rounded={"none"}

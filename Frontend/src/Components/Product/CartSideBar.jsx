@@ -14,13 +14,12 @@ import {
 } from '@chakra-ui/react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import CartItemCard from './CartItemCard'
 
 export default function CartSideBar({ isOpen, onOpen, onClose }) {
     // const { isOpen, onOpen, onClose } = useDisclosure()
-    const { cartItems } = useSelector((store) => store.cart)
+    // const { cartItems } = useSelector((store) => store.cart)
     const btnRef = React.useRef()
     const n = useNavigate()
 
@@ -62,16 +61,14 @@ export default function CartSideBar({ isOpen, onOpen, onClose }) {
                                         "padding": "2px 6px",
                                         "font-weight": "400",
                                         "margin": "0 0 0 2px"
-                                    }}>{cartItems.length}</span> </Tab>
+                                    }}>{}</span> </Tab>
                                     <Tab _selected={{ color: 'black', bg: 'white' }} fontWeight={"400"} >MY WISHLIST</Tab>
                                     <Tab _selected={{ color: 'black', bg: 'white' }} fontWeight={"400"} >RECENTLY VIEWED</Tab>
                                 </TabList>
                             </Box>
                             <TabPanels>
                                 <TabPanel>
-                                    {cartItems.map(item => (
-                                        <CartItemCard item={item} />
-                                    ))}
+                                    {}
                                 </TabPanel>
                                 <TabPanel>
                                     <p>Wishlist!</p>

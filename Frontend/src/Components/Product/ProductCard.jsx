@@ -2,7 +2,7 @@ import { StarIcon } from '@chakra-ui/icons';
 import { Heading, Text, Button, useDisclosure } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import { AiOutlineHeart } from 'react-icons/ai';
-import { useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from "uuid";
 import { addItem } from './cartSlice';

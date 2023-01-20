@@ -89,7 +89,7 @@ const handlePriceFiltering=(e)=>{
   },[sort,priceFilters])
 
   useEffect(()=>{
-    fetch(`https://naughty-pear-bream.cyclic.app/homeDecor/product`)
+    fetch(`https://naughty-pear-bream.cyclic.app/fur`)
     .then(res=>res.json())
     .then(data=>{setPageData(data)
       // console.log(data)
@@ -421,7 +421,7 @@ const handlePriceFiltering=(e)=>{
             marginRight: "80px",
           }}
         >
-          {pageData.length==0?(<Heading padding={"250px 0px 0px 40px"} textAlign="center" color="#FF7135" as='h2' size='xl'> {`Their is no ${type} under ₹ ${priceFilters}/- please Change the filter`}</Heading>): (pageData?.map((ele) =><ProductCard key={ele.id} product={ele} type={type}/>))}
+          {pageData.length==0?(<Heading padding={"250px 0px 0px 40px"} textAlign="center" color="#FF7135" as='h2' size='xl'> {`Their is no ${type} under ₹ ${priceFilters}/- please Change the filter`}</Heading>): (pageData?.map((ele) =><ProductCard key={ele._id} product={ele} type={type}/>))}
         </div>
       </div>
       <hr />
