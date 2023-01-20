@@ -1,14 +1,14 @@
 const express = require("express");
 const { connect } = require("./configs/db");
 require("dotenv").config();
-
+const { furnitureRouter}=require("./routes/furnitureRoute")
 const cors = require('cors')
 
 
 const app = express();
 app.use(cors())
 app.use(express.json());
-
+app.use("/fur", furnitureRouter)
 
 
 app.listen(process.env.port, async () => {
