@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const cors = require("cors");
 const { homeDecorRoutes } = require("./routes/homeDocor.routes");
+const { lightRoutes } = require("./routes/light.routes");
 
 const app = express();
 app.use(cors());
@@ -11,6 +12,7 @@ app.use(express.json());
 
 //routes
 app.use("/homeDecor", homeDecorRoutes);
+app.use("/light",lightRoutes)
 
 app.listen(process.env.port, async () => {
   try {
