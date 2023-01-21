@@ -18,18 +18,19 @@ const getRatings = (id) => {
     }
     return stars;
   };
+
 export const ProductCard = (props) => {
  
 
   const {type}=props
     const [enableBt, setEnableBt]=useState(false)
     const {
-      id,
-      name,
+      _id,
+      desc,
       img,
       madeBy,
-      offer_price,
-      actual_price,
+      discountPrice,
+      cashback,
       total_savings,
       price,
       
@@ -38,7 +39,7 @@ export const ProductCard = (props) => {
     return (
   
       
-      <div key={id}
+      <div key={_id}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -49,18 +50,20 @@ export const ProductCard = (props) => {
         }}
       >
         <div>
-          <div onMouseEnter={() => { setEnableBt(true); console.log("first") }} onMouseLeave={() => { setEnableBt(false); console.log("second") }} style={{position: "relative", textAlign: "center",  color: "white"}}>
+          <div onMouseEnter={() => { setEnableBt(true); console.log("first") }} 
+          onMouseLeave={() => { setEnableBt(false); console.log("second") }} 
+          style={{position: "relative", textAlign: "center",  color: "white"}}>
           
             <img style={{ width: "100%", height: "350px" }} src={img[0]}   alt="Product"/>
             <div style={{ position: "absolute", bottom: "50px", left: "85px" }}>{enableBt ? (
               // calling action add item from redux store
               <AddToCartBT color={"orange"} product={props.product} />
               ) : null}</div>
-        <div style={{position: "absolute",bottom: "22px",right: "8px"}}>{getRatings(id)}</div>
+        <div style={{position: "absolute",bottom: "22px",right: "8px"}}>{getRatings(_id)}</div>
         <AiOutlineHeart />
           </div>
         </div>
-        <Link to={`/ProductDetails/${type}/${id}`}>
+        <Link to={`/furniture/${_id}`}>
         <div
           style={{
             display: "flex",
@@ -70,7 +73,7 @@ export const ProductCard = (props) => {
           }}
         >
           <Text fontSize="lg" padding="10px 0px 0px 0px">
-            {name}
+            {desc}
           </Text>
           <p style={{ color: "gray", padding: "10px 0px 0px 0px" }}>{madeBy}</p>
           <div
@@ -85,11 +88,11 @@ export const ProductCard = (props) => {
             {
               <>
                 <Heading as="h5" size="sm" color="tomato">
-                  {"₹ " + offer_price}
+                  {"₹ " + discountPrice}
                 </Heading>
                 <s style={{ color: "grey" }}>
                   {" "}
-                  <p>{"₹ " + actual_price}</p>
+                  <p>{"₹ " + price}</p>
                 </s>
               </>
             }
@@ -98,7 +101,7 @@ export const ProductCard = (props) => {
             {total_savings}
           </Heading>
           <p style={{ padding: "10px 0px 0px 0px" }}>
-            {"Earn cashback ₹ " + Math.floor(price / 2)}
+            {"Earn cashback ₹ " + Math.floor(cashback / 2)}
           </p>
           <p style={{ padding: "10px 0px 0px 0px" }}>
             {`Ships in 1 day`}

@@ -62,7 +62,7 @@ const filterSort=(sort, priceFilters, pageData)=>{
   return sortFunction(sort, processedData)
 }
 
-export const ProductsPage = () => {
+export const FurniturePage = () => {
   const {type}=useParams()
 
   const [sort, setSort] = useState("");
@@ -89,11 +89,12 @@ const handlePriceFiltering=(e)=>{
   },[sort,priceFilters])
 
   useEffect(()=>{
-    fetch(`https://naughty-pear-bream.cyclic.app/fur`)
+    fetch(`https://naughty-pear-bream.cyclic.app/furniture/product`)
     .then(res=>res.json())
-    .then(data=>{setPageData(data)
-      // console.log(data)
-      setProductsData(data)
+    .then(data=>{
+       setPageData(data.data)
+       console.log(data.data)
+      // setProductsData(data.data)
   })
     .catch(err=>console.log(err))
   },[])
@@ -421,7 +422,9 @@ const handlePriceFiltering=(e)=>{
             marginRight: "80px",
           }}
         >
-          {pageData.length==0?(<Heading padding={"250px 0px 0px 40px"} textAlign="center" color="#FF7135" as='h2' size='xl'> {`Their is no ${type} under ₹ ${priceFilters}/- please Change the filter`}</Heading>): (pageData?.map((ele) =><ProductCard key={ele._id} product={ele} type={type}/>))}
+          {pageData.length==0?(<Heading padding={"250px 0px 0px 40px"} 
+          textAlign="center" color="#FF7135" as='h2' size='xl'>
+             {`Loading..........`}</Heading>): (pageData?.map((ele) =><ProductCard key={ele._id} product={ele} type={type}/>))}
         </div>
       </div>
       <hr />
