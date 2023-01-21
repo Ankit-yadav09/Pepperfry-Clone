@@ -3,28 +3,31 @@ require("dotenv").config();
 const { connect } = require("./configs/db");
 const cors = require("cors");
 const { homeDecorRoutes } = require("./routes/homeDocor.routes");
-const { furnitureRouter}=require("./routes/furnitureRoute");
+const { furnitureRouter } = require("./routes/furnitureRoute");
 const { lightRoutes } = require("./routes/light.routes");
-const {KitchenRouter}=require("./routes/KitchenRouter");
+const { KitchenRouter } = require("./routes/KitchenRouter");
 const { userRouter } = require("./routes/users.routes");
-
-
+const { cartRouter } = require("./routes/cart.routes");
+const { orderedRoutes } = require("./routes/order.routes");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-
 //routes
 app.use("/homeDecor", homeDecorRoutes);
-app.use("/fur",furnitureRouter)
-app.use("/light",lightRoutes)
-app.use("/kitchen", KitchenRouter)
-
+app.use("/fur", furnitureRouter);
+app.use("/light", lightRoutes);
+app.use("/kitchen", KitchenRouter);
 
 //auth routes
-app.use("/user",userRouter)
+app.use("/user", userRouter);
 
+//cart routes
+app.use("/cartItem", cartRouter);
+
+//order routes
+app.use("/orderedItem",orderedRoutes)
 
 app.listen(process.env.port, async () => {
   try {
