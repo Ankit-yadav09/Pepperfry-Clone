@@ -2,23 +2,25 @@ import { Box, Stack } from '@chakra-ui/layout';
 import { Link } from 'react-router-dom'
 import React from 'react'
 import {  Mattresses, HomeDecor, KitchenDining, Appliances, Furnishing, Furniture, LampsLighting, Modular, } from "./DropDownCategory";
+import styles from "./navbar.module.css"
 
 const Categories = () => {
     const [showDropdown, setShowDropdown] = React.useState(false);
     const [dropCategory, setdropCategory] = React.useState(null);
   return (
-    <div style={{border:"1px solid lightgrey",borderLeft:"0px",borderRight:"0px", marginTop:"10px",marginBottom:"10px"}}>
+    <div className={styles.categories} style={{border:"1px solid lightgrey",borderLeft:"0px",borderRight:"0px", marginTop:"10px",marginBottom:"10px"}}>
         <Box
           style={{
             margin:"auto",
             display: "flex",
+            flexDirection:"row",
             justifyContent:"space-between",
             padding: "15px 15px",
             width:"90%",
             // border:"1px solid grey"
           }}
         >
-          <Stack direction={["row"]} spacing="80px" onMouseEnter={()=>{setShowDropdown(true)}} onMouseLeave={()=>{setShowDropdown(false);setdropCategory(null)}} >
+          <Stack direction={["row","row"]} spacing={["80px","20px"]} onMouseEnter={()=>{setShowDropdown(true)}} onMouseLeave={()=>{setShowDropdown(false);setdropCategory(null)}} >
             <li
               style={{ listStyle: "none", fontSize: "16px", fontWeight: "500" }}
             >
