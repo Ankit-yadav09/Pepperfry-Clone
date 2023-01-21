@@ -1,0 +1,104 @@
+
+
+
+
+.cont{
+    width: 100%;
+    background-color: #e9f1f5;
+    margin: 22px 0;
+    
+}
+.sub{
+    padding: 1rem 0;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+}
+.t h1{
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 2rem;
+
+}
+.t p{
+    font-size:1.2rem;
+}
+.t a{
+    font-size: 1.4rem;
+    color: orangered;
+}
+.sub > *{
+    flex: 1 1 25%;
+    margin: 1rem;
+}
+.dis img{
+    width: 100%;
+}
+.dis h3{
+    font-size: 1.2rem;
+    color: rgb(48,48,48);
+    font-weight: 600;
+    margin: 0.3rem 0 -1px 0;
+}
+.dis p{
+    font-size: 1rem;
+}
+.head{
+    width: 90%;
+    margin: 1rem auto;
+}
+.head h1{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+.brands{
+    display: flex;
+    gap: 1rem;
+}
+.brands img{
+    width: 100%;
+}
+.brands > *{
+    
+    flex: 1 1 15%;
+}
+.ads{
+    width: 90%;
+    margin: 1rem auto 0rem auto;
+    display: flex;
+    gap: 1rem;
+}
+.aim img{
+    width: 100%;
+}
+.ads > * {
+    flex: 1 1 50%;
+    
+}
+.common{
+    color: transparent;
+    background-image: url('../assets/banner.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    background-size: contain;
+}
+.rev{
+    width: 90%;
+    margin: 0 auto;
+}
+.rev h1{
+    font-family: 'Playfair Display';
+    font-size: 2rem;
+    font-weight: 600;
+}
+.rim{
+    margin-top: -5rem;
+    color: transparent;
+    background-image: url('../assets/rev.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 80vh;
+    background-size: contain;
+}

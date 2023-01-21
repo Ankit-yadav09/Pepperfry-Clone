@@ -7,11 +7,12 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@reduxjs/toolkit": "^1.8.5",
     "@react-icons/all-files": "^4.1.0",
+    "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.1.6",
     "axios": "^0.27.2",
     "dotenv": "^16.0.2",
     "framer-motion": "^8.4.3",
@@ -51,4 +52,3 @@
     ]
   }
 }
-
