@@ -11,7 +11,7 @@ export default function AuthContextProvider({ children }) {
   });
   const handleLogin = async (payload) => {
     try {
-      const res = await axios.post("http://localhost:8050/user/login", payload);
+      const res = await axios.post("https://naughty-pear-bream.cyclic.app/user/login", payload);
       if (res.data.token) {
         setAuth({
           isAuth: true,
