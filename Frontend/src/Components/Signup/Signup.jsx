@@ -9,18 +9,46 @@ import {
   InputRightElement,
   Link,
   Show,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
+import axios from "axios";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Signup = () => {
+  const toast = useToast();
+  const [formState, setFormState] = React.useState({
+    name: "",
+    email: "",
+    mobile: "",
+    password: "",
+  });
   const [show, setShow] = React.useState(false);
-  const handleSubmit = () => {
-    alert("hello");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "http://localhost:8050/user/register",
+        formState
+      );
+
+      toast({
+        title: res.data.error == false ? "success" : "error",
+        description: res.data.msg,
+        status: res.data.error == true ? "error" : "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleClick = () => setShow(!show);
+
   return (
-    <Flex px="6" gap="3rem">
+    <Flex px="6" gap="3rem" mx="auto" w={{ base: "100%", lg: "60%" }}>
       <Show above="md">
         <Box w="45%">
           <Image
@@ -31,7 +59,7 @@ const Signup = () => {
           />
         </Box>
       </Show>
-      <Box w={{base:"100%",md:"40%",lg:"55%"}}>
+      <Box w={{ base: "100%", md: "40%", lg: "55%" }}>
         <VStack w="100%" rowGap="10rem">
           <VStack w="100%">
             <form
@@ -50,8 +78,13 @@ const Signup = () => {
                     pr="4.5rem"
                     type="text"
                     placeholder="Enter  Your Name Here"
+                    name="name"
                     variant="flushed"
                     focusBorderColor="#f16521"
+                    value={formState.name}
+                    onChange={(e) =>
+                      setFormState({ ...formState, name: e.target.value })
+                    }
                   />
                 </InputGroup>
               </FormControl>
@@ -61,8 +94,13 @@ const Signup = () => {
                     pr="4.5rem"
                     type="text"
                     placeholder="Enter  Your Mobile No Here"
+                    name="mobile"
                     variant="flushed"
                     focusBorderColor="#f16521"
+                    value={formState.mobile}
+                    onChange={(e) =>
+                      setFormState({ ...formState, mobile: e.target.value })
+                    }
                   />
                 </InputGroup>
               </FormControl>
@@ -74,6 +112,11 @@ const Signup = () => {
                     placeholder="Enter  Your Email Here"
                     variant="flushed"
                     focusBorderColor="#f16521"
+                    name="email"
+                    value={formState.email}
+                    onChange={(e) =>
+                      setFormState({ ...formState, email: e.target.value })
+                    }
                   />
                 </InputGroup>
               </FormControl>
@@ -85,6 +128,11 @@ const Signup = () => {
                     placeholder="Enter  Your password Here"
                     variant="flushed"
                     focusBorderColor="#f16521"
+                    name="password"
+                    value={formState.password}
+                    onChange={(e) =>
+                      setFormState({ ...formState, password: e.target.value })
+                    }
                   />
                   <InputRightElement width="4.5rem">
                     <Button
@@ -124,7 +172,7 @@ const Signup = () => {
                 fontSize="0.9rem"
                 variant="outline"
               >
-                Existing User? Log In
+                <NavLink to="/login">Existing User? Log In</NavLink>
               </Button>
             </Box>
             <Box w="100%">
