@@ -15,15 +15,17 @@ export const PaymentPage = () => {
   const toast = useToast()
   const navigate=useNavigate()
 
-  const handleSubmit=async()=>{
+  const handleSubmit=()=>{
 
     toast({
       title:"Payment Successful!",
       status:"success",
-      duration:5000,
+      duration:1500,
       isClosable:true
     });
-    await navigate("/")
+    setTimeout(()=>{
+      navigate("/")
+    },1500)
     
   }
 

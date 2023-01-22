@@ -17,15 +17,18 @@ function AddressPage() {
     const toast = useToast()
     const navigate=useNavigate()
 
-  const handleSubmit=async()=>{
+  const handleSubmit=()=>{
 
     toast({
       title:"Submitted!",
       status:"success",
-      duration:3000,
+      duration:1500,
       isClosable:true
-    });
-    await navigate("/payment")
+    })
+    setTimeout(()=>{
+      navigate("/payment")
+    },1500)
+    
     
   }
 
