@@ -53,7 +53,7 @@ const Navbar = () => {
             </Stack>
             <Stack direction={"row"} spacing="10px">
               <Text className={styles.aboveNavRight}>
-                <Link to="">Enter pincode</Link>
+                <Link to="/">Enter pincode</Link>
               </Text>
               <Text id={styles.pepperStudio} className={styles.aboveNavRight}>
                 <Link to="">Find pepperfry studio</Link>
@@ -134,6 +134,7 @@ const Navbar = () => {
                     )}
                   </MenuItem>
                 </MenuList>
+
               </Menu>
 
               <Link to="/wishlist">
