@@ -62,7 +62,7 @@ const filterSort=(sort, priceFilters, pageData)=>{
   return sortFunction(sort, processedData)
 }
 
-export const MattressesPage = () => {
+export const HomeDecorPage = () => {
   const {type}=useParams()
 
   const [sort, setSort] = useState("");
@@ -89,7 +89,7 @@ const handlePriceFiltering=(e)=>{
   },[sort,priceFilters])
 
   useEffect(()=>{
-    fetch(`https://naughty-pear-bream.cyclic.app/furniture/product?filter=Bed?sort=${sort}`)
+    fetch(`https://naughty-pear-bream.cyclic.app/homeDecor/product`)
     .then(res=>res.json())
     .then(data=>{
        setPageData(data.data)
