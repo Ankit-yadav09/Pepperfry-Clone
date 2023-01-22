@@ -77,6 +77,7 @@ export const MattressesPage = () => {
   const [num, setNum]=useState(0)
   const [enableBt, setEnableBt]=useState(false)
 
+  console.log(sort)
 
 const handlePriceFiltering=(e)=>{
   if(e.target.checked){
@@ -89,7 +90,7 @@ const handlePriceFiltering=(e)=>{
   },[sort,priceFilters])
 
   useEffect(()=>{
-    fetch(`https://naughty-pear-bream.cyclic.app/furniture/product?filter=Bed`)
+    fetch(`https://naughty-pear-bream.cyclic.app/furniture/product?filter=Bed?sort=${sort}`)
     .then(res=>res.json())
     .then(data=>{
        setPageData(data.data)
@@ -97,7 +98,7 @@ const handlePriceFiltering=(e)=>{
       // setProductsData(data.data)
   })
     .catch(err=>console.log(err))
-  },[])
+  },[sort])
 
   return (
     <div
@@ -137,10 +138,10 @@ const handlePriceFiltering=(e)=>{
                 <Radio size="lg" colorScheme="orange" value="rel">
                 Relevance
                 </Radio>
-                <Radio size="lg" colorScheme="orange" value="hl">
+                <Radio size="lg" colorScheme="orange" value="price_high">
                   Highest Priced First
                 </Radio>
-                <Radio size="lg" colorScheme="orange" value="lh">
+                <Radio size="lg" colorScheme="orange" value="price_low">
                   Lowest Priced First
                 </Radio>
                 <Radio size="lg" colorScheme="orange" value="fs">

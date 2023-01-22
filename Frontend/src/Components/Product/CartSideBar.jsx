@@ -20,6 +20,7 @@ import CartItemCard from "./CartItemCard";
 
 const calTotal = (item) => {
   let total = 0;
+
   item.forEach((element) => {
     total += element.discountPrice;
   });
@@ -110,10 +111,18 @@ export default function CartSideBar({ isOpen, onOpen, onClose }) {
               </Box>
               <TabPanels>
                 <TabPanel>
-                  total={calTotal(cartData.data)}
-                  {cartData.data.map((item) => {
-                    return <CartItemCard key={item._id} item={item} />;
-                  })}
+                  <h1
+                    style={{
+                      height: "20px",
+                      backgroundColor: "orange",
+                      color: "black",
+                    }}
+                  >
+                    Total={calTotal(cartData.data)}
+                    {cartData.data.map((item) => {
+                      return <CartItemCard key={item._id} item={item} />;
+                    })}
+                  </h1>
                 </TabPanel>
                 <TabPanel>
                   <p>Wishlist!</p>
@@ -126,7 +135,7 @@ export default function CartSideBar({ isOpen, onOpen, onClose }) {
             <Button
               width={"full"}
               onClick={() => {
-                n("/checkout");
+                n("/address");
               }}
               colorScheme="orange"
             >
