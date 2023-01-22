@@ -1,0 +1,30 @@
+.image img{
+    width: 98%;
+}
+.image{
+    display: inline;
+    width: 100%;
+}
+.image h3{
+    font-size: 1.2rem;
+    color: rgb(48, 48, 48);
+    margin: 0.3rem 0 -1px 0;
+    font-weight: 600;
+}
+.image p{
+    color: rgb(179, 179, 179);
+    font-size: 1.1rem;
+}
+.head{
+    font-family: 'Playfair Display', serif;
+    margin-top: 2.5rem;
+    font-size: 2.8rem;
+}
+@media (max-width: 880px){
+    .image h3{
+        font-size: 1rem;
+    }
+   .image p{
+       font-size: 0.8rem;
+   }
+}

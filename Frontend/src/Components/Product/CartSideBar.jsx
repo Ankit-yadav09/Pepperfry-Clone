@@ -13,6 +13,7 @@ import {
     Box,
 } from '@chakra-ui/react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import axios from 'axios'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import CartItemCard from './CartItemCard'
@@ -22,7 +23,17 @@ export default function CartSideBar({ isOpen, onOpen, onClose }) {
     // const { cartItems } = useSelector((store) => store.cart)
     const btnRef = React.useRef()
     const n = useNavigate()
-
+React.useEffect(()=>{
+    axios({
+        method:"get",
+        url:"https://naughty-pear-bream.cyclic.app/cartItem/product",
+        
+        headers:{
+          authorization:localStorage.getItem("token"),
+          "content-type":"application/json"
+        }
+      }).then(res=>console.log(res.data))
+})
     return (
         <>
             {/* <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>

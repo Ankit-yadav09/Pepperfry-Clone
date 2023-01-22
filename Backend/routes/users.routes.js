@@ -17,11 +17,11 @@ userRouter.post("/register", async (req, res) => {
     const mobile = await UserModel.findOne({ mobile: payload.mobile });
     if (email) {
       res
-        .status(500)
+        .status(200)
         .send({ msg: "email is allready added try to login", error: true });
     } else if (mobile) {
       res
-        .status(500)
+        .status(200)
         .send({ msg: "mobile is allready added try to login", error: true });
     } else {
       bcrypt.hash(payload.password, saltRounds, async (err, hash) => {
@@ -31,7 +31,7 @@ userRouter.post("/register", async (req, res) => {
           payload.password = hash;
           const user = new UserModel(payload);
           await user.save();
-          res.send({ msg: "registred" });
+          res.send({ msg: "registred", error: false });
         }
       });
     }
@@ -68,17 +68,19 @@ userRouter.post("/login", async (req, res) => {
                   res.status(200).send({
                     msg: "logged in success",
                     token,
+                    username: user.name,
+                    error: false,
                   });
                 }
               }
             );
           } else {
-            res.status(404).send({ msg: "wrong credential" });
+            res.send({ msg: "wrong credential", error: true });
           }
         }
       });
     } else {
-      res.status(404).send({ msg: "User Not found", error: true });
+      res.send({ msg: "User Not found", error: true });
     }
   } catch (error) {
     res
