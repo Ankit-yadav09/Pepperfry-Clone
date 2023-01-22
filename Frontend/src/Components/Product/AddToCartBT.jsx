@@ -11,7 +11,7 @@ const AddToCartBT = (props) => {
   const handleAddToCart=async(payload)=>{
  const res= await axios({
     method:"post",
-    url:"http://localhost:8050/cartItem/add",
+    url:"https://naughty-pear-bream.cyclic.app/cartItem/add",
     data:payload,
     headers:{
       authorization:localStorage.getItem("token"),
