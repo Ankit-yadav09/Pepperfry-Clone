@@ -12,11 +12,12 @@ function Furniture() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%",
       }}
     >
-      <Stack direction={"row"}>
-        <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
+        <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"} >
           <p>Sofas and Recliners</p>
           <p>Seating</p>
           <p>Chairs</p>
@@ -60,7 +61,7 @@ function Furniture() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
               <p style={{ fontWeight: "lighter" }}>Amberville</p>
@@ -110,10 +111,11 @@ function Mattresses() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Queen Size Beds</p>
           <p>King Size Beds</p>
@@ -155,7 +157,7 @@ function Mattresses() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
               <p style={{ fontWeight: "lighter" }}>Amberville</p>
@@ -205,10 +207,11 @@ function KitchenDining() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Dinnerware</p>
           <p>Serveware</p>
@@ -244,7 +247,7 @@ function KitchenDining() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
               <p style={{ fontWeight: "lighter" }}>Amberville</p>
@@ -294,10 +297,11 @@ function HomeDecor() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Table Decor</p>
           <p>Wall Shelves & Cabinets</p>
@@ -339,7 +343,7 @@ function HomeDecor() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
               <p style={{ fontWeight: "lighter" }}>Amberville</p>
@@ -389,10 +393,11 @@ function LampsLighting() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Floor Lamps</p>
           <p>Table Lamps</p>
@@ -431,7 +436,7 @@ function LampsLighting() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
 
@@ -485,10 +490,11 @@ function Furnishing() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Bed Linen</p>
           <p>Curtains</p>
@@ -530,7 +536,7 @@ function Furnishing() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
               <p style={{ fontWeight: "lighter" }}>Amberville</p>
@@ -580,10 +586,11 @@ function Appliances() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Mixers & Processors</p>
           <p>Breakfast Appliances</p>
@@ -625,7 +632,7 @@ function Appliances() {
           >
             Popular Brands
           </h2>
-          <Stack direction={"row"} gap={"60px"}>
+          <Stack direction={"row"} justifyContent={"space-between"} gap={"60px"}>
             <Stack>
               <p style={{ fontWeight: "lighter" }}>@home</p>
               <p style={{ fontWeight: "lighter" }}>Amberville</p>
@@ -675,10 +682,11 @@ function Modular() {
         zIndex: 1,
         left: "80px",
         top: "145px",
-        marginTop:"30px"
+        marginTop:"15px",
+        width:"90%"
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} justifyContent={"space-between"}>
         <Stack className={styles.SubCatFurniture} direction={"column"} p={"15px"} minWidth={"250px"}>
           <p>Modular Kitchens</p>
           <p>Modular Wardrobes</p>

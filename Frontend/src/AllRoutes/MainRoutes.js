@@ -4,6 +4,8 @@ import Home from '../Components/Home/Home'
 import Login from "../Components/Login/Login"
 import { ProductsPage } from '../Components/Product/Productpage'
 import Signup from "../Components/Signup/Signup"
+import AddressPage from '../Pages/AddressPage'
+import { PaymentPage } from '../Pages/PaymentPage'
 
 const MainRoutes = () => {
   return (
@@ -12,6 +14,8 @@ const MainRoutes = () => {
       {/* <Route path="/cart" element={<Cart/>} /> */}
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
+      <Route path="/payment" element={<PaymentPage/>} />
+      <Route path="/address" element={<AddressPage/>} />
       {/* <Route path="/wishlist" element={<Wishlist/>} /> */}
       {/* <Route path="/help" element={<Help/>} /> */}
       <Route path="/furniture" element={<ProductsPage/>} />

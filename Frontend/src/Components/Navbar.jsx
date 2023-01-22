@@ -42,7 +42,7 @@ const Navbar = () => {
             </Stack>
             <Stack direction={"row"} spacing="10px">
               <Text className={styles.aboveNavRight}>
-                <Link to="">Enter pincode</Link>
+                <Link to="/">Enter pincode</Link>
               </Text>
               <Text id={styles.pepperStudio} className={styles.aboveNavRight}
               >
@@ -106,7 +106,6 @@ const Navbar = () => {
 
                     <MenuItem>My Account</MenuItem>
                     <MenuItem>My Orders</MenuItem>
-                    <MenuItem>My Reviews</MenuItem>
                     <MenuItem>My Wishlist</MenuItem>
                     <MenuItem>My Wallet</MenuItem>
                     <MenuDivider />
