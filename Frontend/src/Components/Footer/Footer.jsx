@@ -1,13 +1,14 @@
 import { Stack } from '@chakra-ui/react';
 import React from 'react';
+import styles from "../navbar.module.css"
 
 function Footer() {
     return (
-        <div style={{ display : "flex", flexDirection : "column", justifyContent : "center", 
+        <div className={styles.footer} style={{ display : "flex", flexDirection : "column", justifyContent : "center", 
         backgroundColor: "#F3F5F7", padding: "50px 80px", width:"100%", margin:"auto"}} >
             
             <div style={{margin:"auto"}}>
-            <Stack direction={"row"} spacing={"10rem"} >
+            <Stack direction={["column","row","row"]} spacing={"10rem"} >
             <ul>
                 <li style={{listStyle : "none",fontSize : "1.3rem", fontWeight : "600"}}>Useful links</li>
                 <li style={{listStyle : "none",fontSize : "1rem",paddingTop : "8px", color: "#848484"}}>About Us</li>

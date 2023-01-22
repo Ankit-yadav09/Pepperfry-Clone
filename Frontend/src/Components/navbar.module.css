@@ -41,6 +41,9 @@
     justify-content: space-between;
     align-items: center;
 }
+/* .categories{
+
+} */
 
 .SubCatFurniture p:hover{
     cursor: pointer;
@@ -50,4 +53,11 @@
     .aboveNavDiv{
         display: none;
     }
+    .categories{
+        display: none;
+    }
+    .footer{
+        display: none;
+    }
+
 }

@@ -10,29 +10,56 @@ import {
   InputRightElement,
   Link,
   Show,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { Navigate, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Login = () => {
+  const toast = useToast();
+  const [formState, setFormState] = React.useState({
+    email: "",
+    password: "",
+  });
   const [show, setShow] = React.useState(false);
-  const handleSubmit = () => {
-    alert("hello");
+  const { auth, handleLogin } = React.useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await handleLogin(formState);
+      toast({
+        title: res.data.error == false ? "success" : "error",
+        description: res.data.msg,
+        status: res.data.error == true ? "error" : "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   const handleClick = () => setShow(!show);
+  if (auth.isAuth) {
+    return <Navigate to="/" />;
+  }
   return (
-    <Flex px="6" gap="3rem">
+    <Flex px="6" gap="3rem" w={{ base: "100%", lg: "60%" }} mx="auto">
       <Show above="md">
-      <Box
-        w="45%"
-        background="url(https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg) center bottom no-repeat #fffdf6"
-      >
-        <Heading color="#f16521" as="h4" fontSize="1.063rem">
-          You Will Be Able To Track Your Order, Use Wishlist & More.
-        </Heading>
-      </Box>
+        <Box
+          w="45%"
+          background="url(https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg)  bottom no-repeat #fffdf6"
+        >
+          <Heading color="#f16521" as="h4" fontSize="1.063rem">
+            You Will Be Able To Track Your Order, Use Wishlist & More.
+          </Heading>
+        </Box>
       </Show>
-      <Box  w={{base:"100%",md:"40%",lg:"55%"}}>
+      <Box w={{ base: "100%", md: "40%", lg: "55%" }}>
         <VStack w="100%" rowGap="10rem">
           <VStack w="100%">
             <form
@@ -52,6 +79,10 @@ const Login = () => {
                     type="email"
                     placeholder="Enter  Your Email Here"
                     variant="flushed"
+                    value={formState.email}
+                    onChange={(e) =>
+                      setFormState({ ...formState, email: e.target.value })
+                    }
                     focusBorderColor="#f16521"
                   />
                   <InputRightElement width="7rem">
@@ -68,6 +99,10 @@ const Login = () => {
                     type={show ? "text" : "password"}
                     placeholder="Enter  Your password Here"
                     variant="flushed"
+                    value={formState.password}
+                    onChange={(e) =>
+                      setFormState({ ...formState, password: e.target.value })
+                    }
                     focusBorderColor="#f16521"
                   />
                   <InputRightElement width="4.5rem">
@@ -82,7 +117,16 @@ const Login = () => {
                   </InputRightElement>
                 </InputGroup>
               </FormControl>
-              <Button width="100%" type="submit" variant="solid" _hover={{}} bg="#f16521" color={"white"}>Login</Button>
+              <Button
+                width="100%"
+                type="submit"
+                variant="solid"
+                _hover={{}}
+                bg="#f16521"
+                color={"white"}
+              >
+                Login
+              </Button>
             </form>
             <Link
               alignSelf="start"
@@ -101,7 +145,7 @@ const Login = () => {
                 fontSize="0.9rem"
                 variant="outline"
               >
-                New to Pepperfry?Register Here
+                <NavLink to="/signup">New to Pepperfry?Register Here</NavLink>
               </Button>
             </Box>
             <Box w="100%">

@@ -1,24 +1,37 @@
-import React from "react";
-import { Route, Routes } from "react-router";
+import React from 'react'
+import { Route, Routes } from 'react-router'
+import Home from '../Components/Home/Home'
+import Login from "../Components/Login/Login"
+import Signup from "../Components/Signup/Signup"
+import AddressPage from '../Pages/AddressPage'
+import { PaymentPage } from '../Pages/PaymentPage'
+
 import { Furniture } from "../Components/DropDownCategory";
+
 import Home from "../Components/Home/Home";
 import { KichenPage } from "../Components/Kichen/KichenPage";
 import { LightPage } from "../Components/light/Light";
 import Login from "../Components/Login/Login";
 import { HomedecorePage } from "../Components/Matress/Materess";
 import CartSideBar from "../Components/Product/CartSideBar";
+
 import { FurniturePage } from "../Components/Product/Furniturepage";
 import SinglePage from "../Components/Product/single";
-import Signup from "../Components/Signup/Signup";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* <Route path="/cart" element={<Cart/>} /> */}
+      
+
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/cart" element={<CartSideBar/>} />
+      <Route path="/payment" element={<PaymentPage/>} />
+      <Route path="/address" element={<AddressPage/>} />
+
+      {/* <Route path="/wishlist" element={<Wishlist/>} /> */}
+
       {/* <Route path="/help" element={<Help/>} /> */}
       <Route path="/furniture" element={<FurniturePage />} />
       <Route path="/furniture/:_id" element={<SinglePage />} />
