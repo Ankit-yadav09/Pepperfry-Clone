@@ -24,7 +24,7 @@ import {
   SliderMark,
 } from "@chakra-ui/react";
 import { Link, useParams } from "react-router-dom";
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from "../Product/ProductCard";
 
 const filterCard=(ele)=>{
 
@@ -48,6 +48,10 @@ const sortFunction=(sort, pageData)=>{
           return b.price-a.price
         })
       }
+    }else if(sort=="rel"){
+      pageData.sort((a,b)=>{
+        return a.price-b.price
+      })
     }
     return pageData
 }
@@ -58,7 +62,7 @@ const filterSort=(sort, priceFilters, pageData)=>{
   return sortFunction(sort, processedData)
 }
 
-export const FurniturePage = () => {
+export const HomedecorePage = () => {
   const {type}=useParams()
 
   const [sort, setSort] = useState("");
@@ -81,18 +85,19 @@ const handlePriceFiltering=(e)=>{
  
 }
   useEffect(()=>{
-    setPageData(filterSort(sort));
-  },[sort])
+    setPageData(filterSort(sort, priceFilters, productsData));
+  },[sort,priceFilters])
 
   useEffect(()=>{
-    fetch(`https://naughty-pear-bream.cyclic.app/furniture/product`)
+    fetch(`https://naughty-pear-bream.cyclic.app/homeDecor/product`)
     .then(res=>res.json())
     .then(data=>{
        setPageData(data.data)
        console.log(data.data)
-       setProductsData(data.data)})
-       .catch(err=>console.log(err))
-     },[])
+      // setProductsData(data.data)
+  })
+    .catch(err=>console.log(err))
+  },[])
 
   return (
     <div
@@ -129,7 +134,9 @@ const handlePriceFiltering=(e)=>{
             </Heading>
             <RadioGroup onChange={setSort} sort={sort}>
               <Stack direction="column">
-                
+                <Radio size="lg" colorScheme="orange" value="rel">
+                Relevance
+                </Radio>
                 <Radio size="lg" colorScheme="orange" value="hl">
                   Highest Priced First
                 </Radio>
@@ -139,7 +146,9 @@ const handlePriceFiltering=(e)=>{
                 <Radio size="lg" colorScheme="orange" value="fs">
                   Fastest Shipping
                 </Radio>
-
+                <Radio size="lg" colorScheme="orange" value="new">
+                  Newest
+                </Radio>
               </Stack>
             </RadioGroup>
           </div>

@@ -47,6 +47,7 @@ export const ProductCard = (props) => {
           // height: "500px",
           textAlign: "left",
           padding: "10px",
+          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
         }}
       >
         <div>
