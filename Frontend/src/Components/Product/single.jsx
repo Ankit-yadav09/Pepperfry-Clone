@@ -14,26 +14,31 @@ import { useParams } from "react-router-dom";
 
 export default function SinglePage() {
   const [obj, setobj] = useState({});
+  const [loading, setLoading] = useState(true);
   const { _id } = useParams();
-  console.log(_id)
+  console.log(_id);
   useEffect(() => {
-    axios
-      .get(
-        `https://naughty-pear-bream.cyclic.app/furniture/product/${_id}`
-      )
+    setLoading(true);
+    fetch(
+      `https://naughty-pear-bream.cyclic.app/furniture/product/${_id}`
+    )
+      .then((res) => res.json())
       .then((res) => {
-        // console.log(res.data)
-         setobj(res.data)
-      });
+        setobj(res);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
   }, []);
-console.log(obj)
+  if (loading) {
+    return <h1>loading...</h1>;
+  }
   return (
     <>
-    <div className="speacer"></div>
+      <div className="speacer"></div>
       <div className="bannerSectionRecipe">
-        <img src={obj.img[0]} alt="img" />
+        <img src={obj} alt="img" />
         <div>
-          <img src={obj.img} alt="img" />
+          <img src={obj.img[0]} alt="img" />
           <div>
             <div>
               <p>{obj.brand}</p>
@@ -137,7 +142,7 @@ console.log(obj)
           <button>Comment</button>
         </div>
       </div>
-      
+
       <img className="bannerII" src={obj.bannerII} alt="" />
     </>
   );
