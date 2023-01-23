@@ -34,7 +34,7 @@ function AddressPage() {
 
     return (
       <>
-        <Button leftIcon={<AddIcon />} colorScheme='teal' onClick={onOpen}>
+        {/* <Button leftIcon={<AddIcon />} colorScheme='teal' onClick={onOpen}>
           Create user
         </Button>
         <Drawer
@@ -51,8 +51,8 @@ function AddressPage() {
               Address
             </DrawerHeader>
   
-            <DrawerBody>
-              <Stack spacing='24px'>
+            <DrawerBody> */}
+              <Stack w="50%" m="auto" spacing='24px'>
                 <Box>
                   <FormLabel htmlFor='username'>Name</FormLabel>
                   <Input
@@ -171,17 +171,17 @@ function AddressPage() {
                   </Select>
                 </Box>
 
-              </Stack>
-            </DrawerBody>
-  
-            <DrawerFooter borderTopWidth='1px'>
               <Button colorScheme='orange' w={"50%"} variant='outline' mr={3} onClick={onClose}>
                 Cancel
               </Button>
               <Button onClick={handleSubmit} w={"50%"} colorScheme='orange'>Submit</Button>
-            </DrawerFooter>
+              </Stack>
+            {/* </DrawerBody>
+  
+            <DrawerFooter borderTopWidth='1px'> */}
+            {/* </DrawerFooter>
           </DrawerContent>
-        </Drawer>
+        </Drawer> */}
       </>
     )
   }
