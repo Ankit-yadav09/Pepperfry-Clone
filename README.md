@@ -57,6 +57,6 @@ This was a collaborative project made by 4 members Executed in 5 days.
 
 ### About Project
 
-> Pepperfry is an Indian website where user can buy furniture and other decoration items. We the group of four people made this project at our construct week while we were in unit six at masai school. If you want you can fork our repo and easily make this website and clone this beautiful website very easily.
+> PASAND is an Indian website where user can buy furniture and other decoration items. We the group of four people made this project at our construct week while we were in unit six at masai school. If you want you can fork our repo and easily make this website and clone this beautiful website very easily.
 
 ---
