@@ -36,7 +36,8 @@ const MainRoutes = () => {
       <Route path="/light/:_id" element={<SinglePage />} />
       <Route path="/furnishing" element={<FurniturePage />} />
       <Route path="/appliances" element={<KichenPage />} />
-      <Route path="/furniture/:_id" element={<SinglePage />} />
+      <Route path="/furnishing/:_id" element={<SinglePage />} />
+      <Route path="/appliances/:_id" element={<SinglePage />} />
       <Route path="/modular" element={<Hero />} />
  </Routes>
   );
