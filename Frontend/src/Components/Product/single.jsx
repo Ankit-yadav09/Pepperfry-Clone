@@ -19,9 +19,7 @@ export default function SinglePage() {
   console.log(_id);
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://naughty-pear-bream.cyclic.app/furniture/product/${_id}`
-    )
+    fetch(`https://naughty-pear-bream.cyclic.app/furniture/product/${_id}`)
       .then((res) => res.json())
       .then((res) => {
         setobj(res);
@@ -36,7 +34,10 @@ export default function SinglePage() {
     <>
       <div className="speacer"></div>
       <div className="bannerSectionRecipe">
-        <img src={obj} alt="img" />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1CaJnOGX-lqcPmJl_g42us4zrOuLrklCXw&usqp=CAU"
+          alt="img"
+        />
         <div>
           <img src={obj.img[0]} alt="img" />
           <div>
@@ -54,24 +55,41 @@ export default function SinglePage() {
       <div className="recipeimgdiscontainer">
         <p className="recipeimgheading">{obj.name}</p>
         <div className="recipeimgdis">
-          <div>
-            <img src={obj.img} alt="" />
+          <div style={{ display: "flex" }}>
+            <img
+              src={obj.img[2]}
+              alt=""
+              style={{ width: "200px", height: "200px" }}
+            />
+            <img
+              src={obj.img[1]}
+              alt=""
+              style={{ width: "200px", height: "200px" }}
+            />
+            <img
+              src={obj.img[2]}
+              alt=""
+              style={{ width: "200px", height: "200px" }}
+            />
+
+            <img
+              src={obj.img[1]}
+              alt=""
+              style={{ width: "200px", height: "200px" }}
+            />
           </div>
           <div>
             <div className="grid4">
               <div>
                 <p>Time</p>
-                <span>{obj.time}</span>
+                <span>{"10m to 8pm"}</span>
               </div>
               <div>
                 <p>Servings</p>
                 <span>{obj.servings}</span>
               </div>
               <div>
-                <p>
-                  Diet Restriction &nbsp;{" "}
-                  <AiFillQuestionCircle color="#898989" />
-                </p>
+                <p>{obj.type}</p>
                 <p>---</p>
               </div>
               <div>
@@ -99,28 +117,19 @@ export default function SinglePage() {
         </div>
         <div className="fullrecepi">
           <div>
-            <h2>Secret </h2>
-            {obj.ingredients &&
-              obj.ingredients.map((ele, i) => (
-                <p type="number" key={ele}>
-                  {i + 1}. {ele}
-                </p>
-              ))}
+            <h2>Price {obj.price} </h2>
+            <h3>Discount Price{obj.discountPrice}</h3>
+            <h2>Cash Back {obj.cashback}</h2>
           </div>
           <div>
-            <h2>Directions</h2>
-            {obj.directions &&
-              obj.directions.map((ele, i) => (
-                <p type="number" key={ele}>
-                  {i + 1}. {ele}
-                </p>
-              ))}
+            <h2>Warranty</h2>
+            {obj.warranty} Months
           </div>
         </div>
       </div>
       <div className="CandRecip">
         <div>
-          <h2>Rate This Recipe</h2>
+          <h2>Rate This Prodct</h2>
           <p>What do you think </p>
           <p>
             <AiFillStar className="recipesreting" />
@@ -132,7 +141,7 @@ export default function SinglePage() {
           <button>Submit Rating</button>
         </div>
         <div>
-          <h2>Comments</h2>
+          <h2>Commment</h2>
           <p>
             Be the first to comment on this delicious recipe{" "}
             <span>No Comments</span>{" "}
@@ -143,7 +152,7 @@ export default function SinglePage() {
         </div>
       </div>
 
-      <img className="bannerII" src={obj.bannerII} alt="" />
+      <img className="bannerII" src="https://w7.pngwing.com/pngs/500/482/png-transparent-creative-welcome-banner-purple-ribbon-text.png" alt="" />
     </>
   );
 }

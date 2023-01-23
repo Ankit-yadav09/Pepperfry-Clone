@@ -27,11 +27,17 @@ const MainRoutes = () => {
       <Route path="/furniture" element={<FurniturePage />} />
       <Route path="/furniture/:_id" element={<SinglePage />} />
       <Route path="/kitchendining" element={<KichenPage />} />
+      <Route path="/kitchendining/:_id" element={<SinglePage />} />
       <Route path="/mattresses" element={<MattressesPage />} />
-      <Route path="/homedecor" element={< HomeDecorPage/>} />
+      <Route path="/mattresses/:_id" element={<SinglePage />} />
+      <Route path="/homedecor" element={<HomeDecorPage/>} />
+
       <Route path="/light" element={<LightPage />} />
+      <Route path="/light/:_id" element={<SinglePage />} />
       <Route path="/furnishing" element={<FurniturePage />} />
       <Route path="/appliances" element={<KichenPage />} />
+      <Route path="/furnishing/:_id" element={<SinglePage />} />
+      <Route path="/appliances/:_id" element={<SinglePage />} />
       <Route path="/modular" element={<Hero />} />
  </Routes>
   );
